@@ -1,5 +1,5 @@
 # fashion-classifier
-My experiments with reading-implementing-testing different papers on Fashion-MNIST with PyTorch
+Some of my experiments while reading-implementing-testing different papers on Fashion-MNIST with PyTorch
 
 Includes:
 model.py - CoolNameNet is a CNN with optional shortcuts, dense-like connectivity and other stuff. Controlled by 3 intuitive parameters: width, depth and density. Recommended values for width and depth around 5-10, density 1-5. 
