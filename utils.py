@@ -7,17 +7,14 @@ import math
 import notify2
 
 def notify(message):
-
+    # Create Notification
     notify2.init("Experiment Status")
-    # Создаем Notification-объект
     n = notify2.Notification("Experiment Status")
-    # Устанавливаем уровень срочности
+    # Set urgency level
     n.set_urgency(notify2.URGENCY_NORMAL)
-    # Устанавливаем задержку
     n.set_timeout(1000)
-    # Обновляем содержимое
+    # Update contents and show
     n.update("Status: ", message)
-    # Показываем уведомление
     n.show()
 
 def summarize_model(model, show_weights=False, show_parameters=True):
@@ -57,7 +54,6 @@ def initialize_weights(m):
     classname = m.__class__.__name__
     if classname.find('Conv') != -1:
         init.xavier_normal(m.weight, gain=init.calculate_gain('relu'))
-        #init.xavier_normal(m.weight, gain=init.calculate_gain('relu'))
         if m.bias is not None:
             init.constant(m.bias, 0)
     elif classname.find('BatchNorm') != -1 or classname.find('BatchReNorm') != -1:
@@ -66,7 +62,6 @@ def initialize_weights(m):
 
     elif classname.find('Linear') != -1:
         init.kaiming_uniform(m.weight, mode='fan_out')
-        #init.kaiming_normal(m.weight, mode='fan_out')
         if m.bias is not None:
             init.constant(m.bias, 0)
 

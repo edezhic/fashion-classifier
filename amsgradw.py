@@ -5,7 +5,7 @@ from torch.optim import Optimizer
 
 
 class AMSGradW(Optimizer):
-    """Implements AMSGrad with fixed weight decay (based on fast.ai implementation of AdamW)"""
+    """Implements AMSGrad with fixed weight decay"""
 
     def __init__(self, params, lr=0.0005, betas=(0.9, 0.999), eps=1e-8,
                  weight_decay=0):
